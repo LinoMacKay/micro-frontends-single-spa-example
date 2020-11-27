@@ -50,6 +50,6 @@ export class ClientsComponent implements OnInit {
     });
   }
   EditClient(client: Customer) {
-    this.router.navigate(["/clients-details", client.customerId]);
+    this.router.navigate(["/angular/clients-details", client.customerId]);
   }
 }

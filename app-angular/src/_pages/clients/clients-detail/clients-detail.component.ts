@@ -118,11 +118,9 @@ export class ClientsDetailComponent implements OnInit {
     Loc.totalLineOfCredit = this.editableLineOfCredit;
     Loc.avalibleLineOfCredit = this.editableAvalibleLineOfCredit;
 
-    if (this.tasa == "TSA") this.editableTypeRate = 3;
-
-    if (this.tasa == "TNA") this.editableTypeRate = 2;
-
-    if (this.tasa == "TEA") this.editableTypeRate = 1;
+    if (this.tasa == "Tasa Simple Anual") this.editableTypeRate = 3;
+    if (this.tasa == "Tasa Nominal Anual") this.editableTypeRate = 2;
+    if (this.tasa == "Tasa Efectiva Anual") this.editableTypeRate = 1;
 
     Loc.typeRate = this.editableTypeRate;
     if (this.editableAvalibleLineOfCredit > this.editableLineOfCredit) {

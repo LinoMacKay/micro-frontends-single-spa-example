@@ -36,6 +36,7 @@ import { ClientsComponent } from "src/_pages/clients/clients.component";
 import { ClientsDetailComponent } from "src/_pages/clients/clients-detail/clients-detail.component";
 import { ClientdetailpaydialogComponent } from "src/_pages/clients/clients-detail/clientdetailpaydialog/clientdetailpaydialog.component";
 import { OrderComponent } from "src/_pages/order/order.component";
+import { OrderuserComponent } from 'src/_pages/order/orderuser/orderuser.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { OrderComponent } from "src/_pages/order/order.component";
     ClientsDetailComponent,
     ClientdetailpaydialogComponent,
     OrderComponent,
+    OrderuserComponent 
   ],
   imports: [
     BrowserModule,

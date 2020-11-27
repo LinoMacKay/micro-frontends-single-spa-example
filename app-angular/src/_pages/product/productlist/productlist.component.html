@@ -18,10 +18,8 @@
       </div>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button [routerLink]="">
-        <mat-icon>
-          add_shopping_cart
-        </mat-icon>
+      <button mat-button [routerLink]="['/angular/orderuser', product.productId]">
+
         Comprar
       </button>
     </mat-card-actions>

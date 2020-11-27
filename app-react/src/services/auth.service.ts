@@ -1,37 +1,34 @@
 import axios from "axios";
+import { environment } from "../enviroment/environment.prod";
+import { customerLoginDto } from "../models/customerLoginDto";
+import { customerRegisterDto } from "../models/customerRegisterDto";
 
-const API_URL = process.env.REACT_APP_API_BASE_URL + "/identity";
+const API_URL = environment.HOST_URL + "/identity/";
 
 class AuthService {
-  login(username, password) {
+  login(data:customerLoginDto) {
     return axios
-      .post(API_URL + "signin", {
-        username,
-        password,
-      })
+      .post(API_URL + "login",data
+      )
       .then((response) => {
-        if (response.data.accessToken) {
-          localStorage.setItem("user", JSON.stringify(response.data));
+        if (response) {
+          sessionStorage.setItem("access_token", JSON.stringify(response.data));
         }
-
         return response.data;
       });
   }
 
   logout() {
-    localStorage.removeItem("user");
+    sessionStorage.removeItem("access_token");
   }
 
-  register(username, email, password) {
-    return axios.post(API_URL + "signup", {
-      username,
-      email,
-      password,
-    });
+  register(data:customerRegisterDto) {
+    return axios.post(API_URL + "register",data
+    );
   }
 
   getCurrentUser() {
-    return JSON.parse(localStorage.getItem("user"));
+    return JSON.parse(localStorage.getItem("access_token"));
   }
 }
 

@@ -59,13 +59,7 @@ export default function Nav() {
           >
             FutureMarket
           </Typography>
-          <Button
-            onClick={() => handleClick("/react")}
-            variant="contained"
-            className={classes.navbutton}
-          >
-            Cerrar Sesion
-          </Button>
+       
         </Toolbar>
       </AppBar>
 

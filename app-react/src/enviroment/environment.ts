@@ -8,7 +8,6 @@ export const environment = {
   TOKEN_AUTH_USERNAME: "foodyeahapp",
   TOKEN_AUTH_PASSWORD: "fy89codex",
   TOKEN_NAME: "access_token",
-  SPA_URL:"http://localhost:3000/"
 };
 
 /*

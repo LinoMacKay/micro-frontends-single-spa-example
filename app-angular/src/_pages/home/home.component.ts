@@ -1,9 +1,11 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Inject, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { Customer } from "src/_models/customer";
 import { CustomerService } from "src/_service/customer.service";
 import { LoginService } from "src/_service/login.service";
 import { MatCardModule } from "@angular/material/card";
+import { DOCUMENT } from '@angular/common';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: "app-home",
@@ -18,7 +20,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private loginService: LoginService,
     private customerService: CustomerService,
-    private router: Router
+    private router: Router,
+    @Inject(DOCUMENT) private document: Document
   ) {}
 
   ngOnInit(): void {
@@ -33,7 +36,13 @@ export class HomeComponent implements OnInit {
   IrPerfil() {
     this.customerService.getByEmail(this.Email).subscribe((data) => {
       this.Customer = data;
-      this.router.navigate(["/clients-details", this.Customer.customerId]);
+      this.router.navigate(["/angular/clients-details", this.Customer.customerId]);
     });
+  }
+
+  SignOut(){
+    this.loginService.signOut();
+    this.document.location.href = environment.SPA_URL+'/react';
+
   }
 }

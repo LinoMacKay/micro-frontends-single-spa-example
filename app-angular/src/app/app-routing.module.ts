@@ -8,6 +8,7 @@ import { ProductcategoryComponent } from "src/_pages/productcategory/productcate
 import { ClientsComponent } from "src/_pages/clients/clients.component";
 import { OrderComponent } from "src/_pages/order/order.component";
 import { ClientsDetailComponent } from "src/_pages/clients/clients-detail/clients-detail.component";
+import { OrderuserComponent } from 'src/_pages/order/orderuser/orderuser.component';
 
 const routes: Routes = [
   {
@@ -34,7 +35,10 @@ const routes: Routes = [
     path: "angular/orders",
     component: OrderComponent,
   },
-  { path: "angular/clients-details/:id", component: ClientsDetailComponent },
+  { path: "angular/clients-details/:id",
+   component: ClientsDetailComponent },
+   {path:'angular/orderuser/:id',component:OrderuserComponent},
+
 ];
 
 @NgModule({
