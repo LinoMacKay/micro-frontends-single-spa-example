@@ -17,12 +17,13 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     appBar: {
       zIndex: theme.zIndex.drawer + 1,
+      color: "#fff",
     },
     drawer: {
       width: drawerWidth,
       flexShrink: 0,
     },
-    button: {
+    navbutton: {
       marginLeft: "auto",
     },
     drawerPaper: {
@@ -43,8 +44,6 @@ export default function Nav() {
   const [selectedItem, setSelectedItem] = useState<string>("none");
 
   const handleClick = (url: string): void => {
-    setSelectedItem(url.split("/")[1]);
-
     navigateToUrl(url);
   };
 
@@ -60,7 +59,11 @@ export default function Nav() {
           >
             FutureMarket
           </Typography>
-          <Button variant="contained" className={classes.button}>
+          <Button
+            onClick={() => handleClick("/react")}
+            variant="contained"
+            className={classes.navbutton}
+          >
             Cerrar Sesion
           </Button>
         </Toolbar>
