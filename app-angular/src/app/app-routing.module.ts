@@ -7,11 +7,12 @@ import { ProductComponent } from "src/_pages/product/product.component";
 import { ProductcategoryComponent } from "src/_pages/productcategory/productcategory.component";
 import { ClientsComponent } from "src/_pages/clients/clients.component";
 import { OrderComponent } from "src/_pages/order/order.component";
+import { ClientsDetailComponent } from "src/_pages/clients/clients-detail/clients-detail.component";
 
 const routes: Routes = [
   {
     path: "angular",
-    component: AngularComponent,
+    redirectTo: "angular/home",
   },
   {
     path: "angular/home",
@@ -33,6 +34,7 @@ const routes: Routes = [
     path: "angular/orders",
     component: OrderComponent,
   },
+  { path: "angular/clients-details/:id", component: ClientsDetailComponent },
 ];
 
 @NgModule({
