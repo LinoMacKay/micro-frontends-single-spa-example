@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  HOST_URL: "https://finanzas-api-kind-oribi-eo.mybluemix.net",
+  TOKEN_AUTH_USERNAME: "foodyeahapp",
+  TOKEN_AUTH_PASSWORD: "fy89codex",
+  TOKEN_NAME: "access_token",
 };
 
 /*
